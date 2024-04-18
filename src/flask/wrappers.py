@@ -172,3 +172,24 @@ class Response(ResponseBase):
 
         # return Werkzeug's default when not in an app context
         return super().max_cookie_size
+
+
+class NotFoundResponse():
+    @staticmethod
+    def throw():
+        return Response("Not found", status=404)
+
+class OkResponse():
+    @staticmethod
+    def throw():
+        return Response("Ok", status=200)
+
+class BadRequestResponse():
+    @staticmethod
+    def throw():
+        return Response("Bad request", status=400)
+
+class InternalServerErrorResponse():
+    @staticmethod
+    def throw():
+        return Response("Internal server error", status=500)
