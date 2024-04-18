@@ -333,7 +333,7 @@ class Scaffold:
         return self._method_route("PATCH", rule, options)
 
     @setupmethod
-    def route(self, rule: str, **options: t.Any) -> t.Callable[[T_route], T_route]:
+    def route(self, rule: str = "/", **options: t.Any) -> t.Callable[[T_route], T_route]:
         """Decorate a view function to register it with the given URL
         rule and options. Calls :meth:`add_url_rule`, which has more
         details about the implementation.
